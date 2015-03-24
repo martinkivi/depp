@@ -13,7 +13,7 @@
       .col-md-2.control-label
         = f.label :ident_type, t(:type) + '*'
       .col-md-10
-        = f.select(:ident_type, Contact::SELECTION_TYPES, { selected: f.object.ident_type },
+        = f.select(:ident_type, Depp::Contact::SELECTION_TYPES, { selected: f.object.ident_type },
           class: 'js-ident-type')
 
     .form-group

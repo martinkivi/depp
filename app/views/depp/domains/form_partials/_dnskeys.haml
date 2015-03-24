@@ -16,12 +16,12 @@
           .form-group
             = label_tag "domain_dnskeys_attributes_#{k}_ds_alg", t('ds_algorithm'), class: 'col-md-2 control-label'
             .col-md-10
-              = select_tag "domain[dnskeys_attributes][#{k}][ds_alg]", options_for_select(Dnskey::ALGORITHMS, v['ds_alg']), {class: 'form-control'}
+              = select_tag "domain[dnskeys_attributes][#{k}][ds_alg]", options_for_select(Depp::Dnskey::ALGORITHMS, v['ds_alg']), {class: 'form-control'}
 
           .form-group
             = label_tag "domain_dnskeys_attributes_#{k}_ds_digest_type", t('ds_digest_type'), class: 'col-md-2 control-label'
             .col-md-10
-              = select_tag "domain[dnskeys_attributes][#{k}][ds_digest_type]", options_for_select(Dnskey::DS_DIGEST_TYPES, v['ds_digest_type']), {class: 'form-control'}
+              = select_tag "domain[dnskeys_attributes][#{k}][ds_digest_type]", options_for_select(Depp::Dnskey::DS_DIGEST_TYPES, v['ds_digest_type']), {class: 'form-control'}
 
           .form-group
             = label_tag "domain_dnskeys_attributes_#{k}_ds_digest", t('ds_digest'), class: 'col-md-2 control-label'
@@ -31,17 +31,17 @@
         .form-group
           = label_tag "domain_dnskeys_attributes_#{k}_flags", t('flags'), class: 'col-md-2 control-label'
           .col-md-10
-            = select_tag "domain[dnskeys_attributes][#{k}][flags]", options_for_select(Dnskey::FLAGS, v['flags']), {class: 'form-control'}
+            = select_tag "domain[dnskeys_attributes][#{k}][flags]", options_for_select(Depp::Dnskey::FLAGS, v['flags']), {class: 'form-control'}
 
         .form-group
           = label_tag "domain_dnskeys_attributes_#{k}_protocol", t('protocol'), class: 'col-md-2 control-label'
           .col-md-10
-            = select_tag "domain[dnskeys_attributes][#{k}][protocol]", options_for_select(Dnskey::PROTOCOLS, v['protocol']), {class: 'form-control'}
+            = select_tag "domain[dnskeys_attributes][#{k}][protocol]", options_for_select(Depp::Dnskey::PROTOCOLS, v['protocol']), {class: 'form-control'}
 
         .form-group
           = label_tag "domain_dnskeys_attributes_#{k}_alg", t('alg'), class: 'col-md-2 control-label'
           .col-md-10
-            = select_tag "domain[dnskeys_attributes][#{k}][alg]", options_for_select(Dnskey::ALGORITHMS, v['alg']), {class: 'form-control'}
+            = select_tag "domain[dnskeys_attributes][#{k}][alg]", options_for_select(Depp::Dnskey::ALGORITHMS, v['alg']), {class: 'form-control'}
 
         .form-group
           = label_tag "domain_dnskeys_attributes_#{k}_public_key", t('public_key'), class: 'col-md-2 control-label'

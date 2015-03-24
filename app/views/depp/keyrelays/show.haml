@@ -28,17 +28,17 @@
       .form-group
         = label_tag :key_data_flags, t('flag'), class: 'col-md-2 control-label'
         .col-md-10
-          = select_tag :key_data_flags, options_for_select(Dnskey::FLAGS, params['key_data_flags']), {class: 'form-control'}
+          = select_tag :key_data_flags, options_for_select(Depp::Dnskey::FLAGS, params['key_data_flags']), {class: 'form-control'}
 
       .form-group
         = label_tag :key_data_protocol, t('protocol'), class: 'col-md-2 control-label'
         .col-md-10
-          = select_tag :key_data_protocol, options_for_select(Dnskey::PROTOCOLS, params['key_data_protocol']), {class: 'form-control'}
+          = select_tag :key_data_protocol, options_for_select(Depp::Dnskey::PROTOCOLS, params['key_data_protocol']), {class: 'form-control'}
 
       .form-group
         = label_tag :key_data_alg, t('algorithm'), class: 'col-md-2 control-label'
         .col-md-10
-          = select_tag :key_data_alg, options_for_select(Dnskey::ALGORITHMS, params['key_data_alg']), {class: 'form-control'}
+          = select_tag :key_data_alg, options_for_select(Depp::Dnskey::ALGORITHMS, params['key_data_alg']), {class: 'form-control'}
 
       .form-group
         = label_tag :key_data_public_key, t('public_key'), class: 'col-md-2 control-label'

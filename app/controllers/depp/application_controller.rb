@@ -30,11 +30,19 @@ module Depp
     def current_user
       return if !session[:tag] || !session[:password]
 
-      @user_cache ||= User.new(
+      @user_cache ||= Depp::User.new(
         tag: session[:tag],
         password: session[:password],
         pki: session[:pki]
       )
+    end
+
+    def response_ok?
+      @data.css('result').each do |x|
+        success_codes = %(1000, 1300, 1301)
+        return false unless success_codes.include?(x['code'])
+      end
+      true
     end
   end
 end

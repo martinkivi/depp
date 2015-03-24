@@ -1,11 +1,9 @@
 module Depp
   class KeyrelaysController < ApplicationController
-    include Common
-
     def show; end
 
     def create
-      keyrelay = Keyrelay.new(current_user: current_user)
+      keyrelay = Depp::Keyrelay.new(current_user: current_user)
       @data = keyrelay.keyrelay(params)
 
       if response_ok?

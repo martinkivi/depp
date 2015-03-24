@@ -1,7 +1,5 @@
 module Depp
   class DomainsController < ApplicationController
-    include Common
-
     before_action :init_domain, except: :new
 
     def index
@@ -30,7 +28,7 @@ module Depp
     end
 
     def new
-      @domain_params = Domain.default_params
+      @domain_params = Depp::Domain.default_params
     end
 
     def create
@@ -46,7 +44,7 @@ module Depp
 
     def edit
       @data = @domain.info(params[:domain_name])
-      @domain_params = Domain.construct_params_from_server_data(@data)
+      @domain_params = Depp::Domain.construct_params_from_server_data(@data)
     end
 
     def update
@@ -96,7 +94,7 @@ module Depp
     private
 
     def init_domain
-      @domain = Domain.new(current_user: current_user)
+      @domain = Depp::Domain.new(current_user: current_user)
     end
   end
 end

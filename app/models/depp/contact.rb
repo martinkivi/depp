@@ -148,7 +148,7 @@ module Depp
     end
 
     def save
-      create_xml = Contact.epp_xml.create(
+      create_xml = Depp::Contact.epp_xml.create(
         {
           id: { value: code },
           email: { value: email },
@@ -167,7 +167,7 @@ module Depp
         }, 
         extension_xml
       )
-      data = Contact.user.request(create_xml)
+      data = Depp::Contact.user.request(create_xml)
       self.id = data.css('id').text
       handle_errors(data)
     end
@@ -188,7 +188,7 @@ module Depp
       self.state        = params[:state]
       self.country_code = params[:country_code]
 
-      update_xml = Contact.epp_xml.update(
+      update_xml = Depp::Contact.epp_xml.update(
         {
           id: { value: id },
           chg: {
@@ -212,7 +212,7 @@ module Depp
         },
         extension_xml
       )
-      data = Contact.user.request(update_xml)
+      data = Depp::Contact.user.request(update_xml)
       handle_errors(data)
     end
 
@@ -224,7 +224,7 @@ module Depp
         },
         extension_xml
       )
-      data = Contact.user.request(delete_xml)
+      data = Depp::Contact.user.request(delete_xml)
       handle_errors(data)
     end
 

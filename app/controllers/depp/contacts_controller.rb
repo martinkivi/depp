@@ -1,7 +1,5 @@
 module Depp
   class ContactsController < ApplicationController
-    include Common
-
     before_action :init_epp_contact
 
     def index
@@ -13,19 +11,19 @@ module Depp
     end
 
     def new
-      @contact = Contact.new
+      @contact = Depp::Contact.new
     end
 
     def show
-      @contact = Contact.find_by_id(params[:id])
+      @contact = Depp::Contact.find_by_id(params[:id])
     end
 
     def edit
-      @contact = Contact.find_by_id(params[:id])
+      @contact = Depp::Contact.find_by_id(params[:id])
     end
 
     def create
-      @contact = Contact.new(params[:contact])
+      @contact = Depp::Contact.new(params[:contact])
 
       if @contact.save
         redirect_to contact_url(@contact.id)
@@ -35,7 +33,7 @@ module Depp
     end
 
     def update
-      @contact = Contact.new(params[:contact])
+      @contact = Depp::Contact.new(params[:contact])
 
       if @contact.update_attributes(params[:contact])
         redirect_to contact_url(@contact.id)
@@ -45,11 +43,11 @@ module Depp
     end
 
     def delete
-      @contact = Contact.find_by_id(params[:id])
+      @contact = Depp::Contact.find_by_id(params[:id])
     end
 
     def destroy
-      @contact = Contact.new(params[:contact])
+      @contact = Depp::Contact.new(params[:contact])
 
       if @contact.delete
         redirect_to contacts_url, notice: t(:destroyed)
@@ -69,13 +67,13 @@ module Depp
       return unless @ids
 
       @data = @contact.check(@ids)
-      @contacts = Contact.construct_check_hash_from_data(@data)
+      @contacts = Depp::Contact.construct_check_hash_from_data(@data)
     end
 
     private
 
     def init_epp_contact
-      Contact.user = current_user
+      Depp::Contact.user = current_user
     end
   end
 end

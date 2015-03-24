@@ -48,12 +48,12 @@ module Depp
 
     def update(domain_params)
       data = current_user.request(epp_xml.info(name: { value: domain_params[:name] }))
-      old_domain_params = Domain.construct_params_from_server_data(data)
+      old_domain_params = Depp::Domain.construct_params_from_server_data(data)
 
       xml = epp_xml.update(
-        Domain.construct_edit_hash(domain_params, old_domain_params),
-        Domain.construct_ext_edit_hash(domain_params, old_domain_params),
-        Domain.construct_custom_params_hash(domain_params)
+        Depp::Domain.construct_edit_hash(domain_params, old_domain_params),
+        Depp::Domain.construct_ext_edit_hash(domain_params, old_domain_params),
+        Depp::Domain.construct_custom_params_hash(domain_params)
       )
 
       current_user.request(xml)
@@ -62,7 +62,7 @@ module Depp
     def delete(domain_params)
       xml = epp_xml.delete({
         name: { value: domain_params[:name] }
-      }, Domain.construct_custom_params_hash(domain_params))
+      }, Depp::Domain.construct_custom_params_hash(domain_params))
 
       current_user.request(xml)
     end

@@ -7,7 +7,7 @@
       = label_tag :contact_disclose_flag, t('flag_type'), class: 'col-md-2 control-label'
       .col-md-10
         =# check_box_tag('contact[disclose][sv_policy]', @contact_params[:disclose][:sv_policy], class: 'form-control')
-        = select_tag('contact[disclose][flag]', options_for_select(Contact::DISCLOSURE_TYPES) )
+        = select_tag('contact[disclose][flag]', options_for_select(Depp::Contact::DISCLOSURE_TYPES) )
 
   .panel-body
     .form-group

@@ -1,7 +1,5 @@
 module Depp
   class PollsController < ApplicationController
-    include Common
-
     before_action :init_epp_xml
 
     def show
@@ -46,7 +44,7 @@ module Depp
 
     def init_epp_xml
       @ex = EppXml::Session.new(cl_trid_prefix: current_user.tag)
-      @domain = Domain.new(current_user: current_user)
+      @domain = Depp::Domain.new(current_user: current_user)
     end
   end
 end

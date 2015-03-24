@@ -1,12 +1,12 @@
 module Depp
   class SessionsController < ApplicationController
     skip_before_action :authenticate_user
-    layout 'login'
+    layout 'depp/login'
 
     # rubocop: disable Metrics/PerceivedComplexity
     # rubocop: disable Metrics/CyclomaticComplexity
     def create
-      @user = User.new(params[:user].merge(
+      @user = Depp::User.new(params[:user].merge(
           pki: request.env['HTTP_SSL_CLIENT_S_DN_CN'].present?
         )
       )
@@ -39,11 +39,11 @@ module Depp
     end
 
     def login
-      @user = User.new
+      @user = Depp::User.new
     end
 
     def login_pki
-      @user = User.new
+      @user = Depp::User.new
     end
   end
 end
