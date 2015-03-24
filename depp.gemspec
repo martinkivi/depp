@@ -17,31 +17,31 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 4.2.1"
+  s.add_dependency "rails", ">= 4.2.1"
 
   # load env
-  s.add_dependency "figaro", "~> 1.1.0"
+  s.add_dependency "figaro", ">= 1.1.0"
 
   # html
-  s.add_dependency "haml-rails", "~> 0.6.0"
+  s.add_dependency "haml-rails", ">= 0.6.0"
 
   # style
-  s.add_dependency "sass-rails", "~> 5.0.0"
+  s.add_dependency "sass-rails", ">= 5.0.0"
 
   # js
-  s.add_dependency "uglifier", "~> 2.6.1"     # minifies js
-  s.add_dependency "coffee-rails", "~> 4.1.0" # coffeescript support
-  s.add_dependency "jquery-rails", "~> 4.0.3" # jquery
+  s.add_dependency "uglifier", ">= 2.6.1"     # minifies js
+  s.add_dependency "coffee-rails", ">= 4.1.0" # coffeescript support
+  s.add_dependency "jquery-rails", ">= 4.0.3" # jquery
 
   # epp api
   # s.add_dependency "epp", "~> 1.4.2", github: 'gitlabeu/epp'
-  s.add_dependency "epp-xml", '~> 0.10.4'
-  s.add_dependency "nokogiri", '~> 1.6.3.1'
+  s.add_dependency "epp-xml", '>= 0.10.4'
+  s.add_dependency "nokogiri", '>= 1.6.6.2'
 
   # registry related
-  gem 'countries', '~> 0.9.3'
-  gem 'coderay', '~> 1.1.0'
-  gem 'uuidtools', '~> 2.1.4'
+  gem 'countries', '>= 0.9.3'
+  gem 'coderay', '>= 1.1.0'
+  gem 'uuidtools', '>= 2.1.4'
 
   # s.add_development_dependency "sqlite3"
 end
