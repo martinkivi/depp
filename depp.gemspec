@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "figaro", ">= 1.1.0"
 
   # html
-  s.add_dependency "haml-rails", ">= 0.6.0"
+  s.add_dependency "haml-rails", ">= 0.9.0"
 
   # style
   s.add_dependency "sass-rails", ">= 5.0.0"
