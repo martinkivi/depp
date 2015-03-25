@@ -7,7 +7,7 @@ module Depp
 
     def env_style
       return '' if unstable_env.nil?
-      "background-image: url(#{image_path("bg-#{unstable_env}.png")});"
+      "background-image: url(#{image_path("depp/bg-#{unstable_env}.png")});"
     end
 
     def ident_for(contact)

@@ -1,3 +1,9 @@
+#= require jquery
+#= require jquery_ujs
+#= require turbolinks
+#= require bootstrap-sprockets
+#= require jquery.nested_attributes
+
 $(document).on 'ready page:load', ->
   $('.js-contact-form').on 'restoreDefault', (e) ->
     form = $(e.target)

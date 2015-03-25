@@ -2,7 +2,7 @@ en:
   activemodel:
     errors:
       models:
-        user:
+        'depp/user':
           attributes:
             base:
               failed_to_open_connection_to_epp_server: 'Failed to open connection to EPP server!'
@@ -13,7 +13,7 @@ en:
             password:
               blank: "Password can't be blank"
 
-  username: 'Username from engine'
+  username: 'Username'
   password: 'Password'
   log_in: 'Log in'
   log_out: 'Log out (%{tag})'
