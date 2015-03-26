@@ -16,7 +16,7 @@ en:
   username: 'Username'
   password: 'Password'
   log_in: 'Log in'
-  log_out: 'Log out (%{tag})'
+  log_out: 'Log out (%{user})'
   domain_name: 'Domain name'
   domains: 'Domains'
   register: 'Register'
