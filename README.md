@@ -8,7 +8,7 @@ Installation
 
 Add Depp to your Gemfile:
 
-    gem 'depp', github: 'gitlab.eu/depp'
+    gem 'depp', github: 'domify/depp'
 
 Mount Depp to your application routes, example:
 
