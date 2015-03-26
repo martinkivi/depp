@@ -33,7 +33,7 @@
             %li{class: active_class}= link_to t(:xml_console), xml_console_path
 
           %ul.nav.navbar-nav.navbar-right
-            %li= link_to t(:log_out, tag: current_user.tag), '/logout'
+            %li= link_to t(:log_out, tag: depp_current_user.tag), '/logout'
         / /.nav-collapse
 
     = yield :tabs

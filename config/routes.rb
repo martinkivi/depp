@@ -1,10 +1,4 @@
 Depp::Engine.routes.draw do
-  resources :sessions do
-    collection do
-      post 'pki'
-    end
-  end
-
   resources :domains do
     collection do
       post 'update', as: 'update'
