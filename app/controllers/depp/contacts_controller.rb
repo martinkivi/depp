@@ -3,7 +3,7 @@ module Depp
     before_action :init_epp_contact
 
     def index
-      res = current_user.repp_request('contacts', { page: params[:page] })
+      res = depp_current_user.repp_request('contacts', { page: params[:page] })
       flash.now[:epp_results] = [{ 'code' => res.code, 'msg' => res.message }]
       @response = res.parsed_body.with_indifferent_access if res.code == '200'
       @contacts    = @response[:contacts] if @response
@@ -73,7 +73,7 @@ module Depp
     private
 
     def init_epp_contact
-      Depp::Contact.user = current_user
+      Depp::Contact.user = depp_current_user
     end
   end
 end

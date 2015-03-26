@@ -5,11 +5,6 @@ Depp::Engine.routes.draw do
     end
   end
 
-  get '/login/id_card', to: 'sessions#login_id_card', as: 'login_id_card'
-  get '/login/m_id', to: 'sessions#login_m_id', as: 'login_m_id'
-  get '/login/pki', to: 'sessions#login_pki', as: 'login_pki'
-  get '/logout', to: 'sessions#destroy'
-
   resources :domains do
     collection do
       post 'update', as: 'update'

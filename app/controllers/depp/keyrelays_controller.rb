@@ -3,7 +3,7 @@ module Depp
     def show; end
 
     def create
-      keyrelay = Depp::Keyrelay.new(current_user: current_user)
+      keyrelay = Depp::Keyrelay.new(current_user: depp_current_user)
       @data = keyrelay.keyrelay(params)
 
       if response_ok?

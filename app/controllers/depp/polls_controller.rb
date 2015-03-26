@@ -3,17 +3,17 @@ module Depp
     before_action :init_epp_xml
 
     def show
-      @data = current_user.request(@ex.poll)
+      @data = depp_current_user.request(@ex.poll)
     end
 
     def destroy
-      @data = current_user.request(@ex.poll(poll: {
+      @data = depp_current_user.request(@ex.poll(poll: {
         value: '', attrs: { op: 'ack', msgID: params[:id] }
       }))
 
       @results = @data.css('result')
 
-      @data = current_user.request(@ex.poll)
+      @data = depp_current_user.request(@ex.poll)
       render 'show'
     end
 
@@ -25,7 +25,7 @@ module Depp
         redirect_to info_domains_path(domain_name: domain_params[:name])
       else
         @results = @data.css('result')
-        @data = current_user.request(@ex.poll)
+        @data = depp_current_user.request(@ex.poll)
         render 'show'
       end
     end
@@ -35,7 +35,7 @@ module Depp
       @data = @domain.confirm_transfer(domain_params)
 
       @results = @data.css('result')
-      @data = current_user.request(@ex.poll)
+      @data = depp_current_user.request(@ex.poll)
 
       render 'show'
     end
@@ -43,8 +43,8 @@ module Depp
     private
 
     def init_epp_xml
-      @ex = EppXml::Session.new(cl_trid_prefix: current_user.tag)
-      @domain = Depp::Domain.new(current_user: current_user)
+      @ex = EppXml::Session.new(cl_trid_prefix: depp_current_user.tag)
+      @domain = Depp::Domain.new(current_user: depp_current_user)
     end
   end
 end

@@ -4,7 +4,7 @@ module Depp
 
     def create
       begin
-        @result = current_user.server.request(params[:payload])
+        @result = depp_current_user.server.request(params[:payload])
       rescue
         @result = 'CONNECTION ERROR - Is the EPP server running?'
       end
@@ -13,7 +13,7 @@ module Depp
 
     def load_xml
       # binding.pry
-      cl_trid = "#{current_user.tag}-#{Time.now.to_i}"
+      cl_trid = "#{depp_current_user.tag}-#{Time.now.to_i}"
       xml_dir_path = Depp::Engine.root + 'app/views/depp/xml_consoles/epp_requests'
       xml = File.read("#{xml_dir_path}/#{params[:obj]}/#{params[:epp_action]}.xml")
       xml.gsub!('<clTRID>ABC-12345</clTRID>', "<clTRID>#{cl_trid}</clTRID>")
