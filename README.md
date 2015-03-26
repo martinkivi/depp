@@ -13,3 +13,7 @@ Add Depp to your Gemfile:
 Mount Depp to your application routes, example:
 
     mount Depp::Engine, at: '/depp'
+
+Depp requires login_url helper, example in routes:
+
+    get '/login', to: 'sessions#login', as: 'login'
