@@ -5,9 +5,9 @@ module Depp
     def index
       res = current_user.repp_request('contacts', { page: params[:page] })
       flash.now[:epp_results] = [{ 'code' => res.code, 'msg' => res.message }]
-      @response = JSON.parse(res.body).with_indifferent_access
-      @contacts    = @response[:contacts]
-      @total_pages = @response[:total_pages]
+      @response = res.parsed_body.with_indifferent_access if res.code == '200'
+      @contacts    = @response[:contacts] if @response
+      @total_pages = @response[:total_pages] if @response
     end
 
     def new

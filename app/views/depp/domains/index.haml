@@ -18,29 +18,31 @@
             &nbsp;
 
 %hr
-.panel.panel-default
-  .table-responsive
-    %table.table.table-hover.table-bordered.table-condensed.domify
-      %thead
-        %tr
-          %th{class: 'col-xs-3'}= t(:name)
-          %th{class: 'col-xs-6'}= t(:valid)
-          %th{class: 'col-xs-3'}= t(:actions)
-      %tbody
-        - @response['domains'].each do |x|
+
+- if @response
+  .panel.panel-default
+    .table-responsive
+      %table.table.table-hover.table-bordered.table-condensed.domify
+        %thead
           %tr
-            %td= link_to(x['name'], info_domains_path(domain_name: x['name']))
-            %td
-              = Time.parse(x['valid_from']).try(:to_date)
-              \-
-              = Time.parse(x['valid_to']).try(:to_date)
-            %td
-              = link_to(t(:edit), edit_domains_path(domain_name: x['name']), 
-                class: 'btn btn-primary btn-xs') 
-              = link_to(t(:renew), renew_domains_path(domain_name: x['name']), 
-                class: 'btn btn-default btn-xs') 
-              = link_to(t(:delete), delete_domains_path(domain_name: x['name']), 
-                class: 'btn btn-default btn-xs')
+            %th{class: 'col-xs-3'}= t(:name)
+            %th{class: 'col-xs-6'}= t(:valid)
+            %th{class: 'col-xs-3'}= t(:actions)
+        %tbody
+          - @response['domains'].each do |x|
+            %tr
+              %td= link_to(x['name'], info_domains_path(domain_name: x['name']))
+              %td
+                = Time.parse(x['valid_from']).try(:to_date)
+                \-
+                = Time.parse(x['valid_to']).try(:to_date)
+              %td
+                = link_to(t(:edit), edit_domains_path(domain_name: x['name']), 
+                  class: 'btn btn-primary btn-xs') 
+                = link_to(t(:renew), renew_domains_path(domain_name: x['name']), 
+                  class: 'btn btn-default btn-xs') 
+                = link_to(t(:delete), delete_domains_path(domain_name: x['name']), 
+                  class: 'btn btn-default btn-xs')
 
 - 1.upto(@response['total_pages']) do |i|
   - if params[:page].nil? && i == 1 || params[:page].to_i == i

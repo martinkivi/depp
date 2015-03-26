@@ -5,7 +5,7 @@ module Depp
     def index
       res = current_user.repp_request('domains', { page: params[:page] })
       flash.now[:epp_results] = [{ 'code' => res.code, 'msg' => res.message }]
-      @response = JSON.parse(res.body)
+      @response = res.parsed_body if res.code == '200'
     end
 
     def info

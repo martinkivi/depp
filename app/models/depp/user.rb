@@ -51,7 +51,16 @@ module Depp
         http.request(req)
       end
 
-      res
+      ret = OpenStruct.new(code: res.code)
+      ret.parsed_body = JSON.parse(res.body) if res.body.present?
+  
+      if ret.parsed_body && ret.parsed_body['error']
+        ret.message = ret.parsed_body['error']
+      else
+        ret.message = res.message
+      end
+  
+      ret
     end
 
     private
