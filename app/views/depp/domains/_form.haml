@@ -12,15 +12,15 @@
       / Tab panes
       .tab-content
         #general-tab.tab-pane.active
-          = render 'domains/form_partials/general'
-          = render 'domains/form_partials/contacts'
+          = render 'depp/domains/form_partials/general'
+          = render 'depp/domains/form_partials/contacts'
           %hr
-          = render 'domains/form_partials/nameservers'
+          = render 'depp/domains/form_partials/nameservers'
           %hr
-          = render 'domains/form_partials/dnskeys'
+          = render 'depp/domains/form_partials/dnskeys'
         - if params['domain_name']
           #statuses-tab.tab-pane
-            = render 'domains/form_partials/statuses'
+            = render 'depp/domains/form_partials/statuses'
 
         .panel.panel-default
           .panel-heading.clearfix

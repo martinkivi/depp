@@ -1,20 +1,20 @@
 = form_for(@contact, html: {class: 'form-horizontal js-contact-form'}) do |f|
-  = render 'shared/error_messages', f: f 
+  = render 'depp/shared/error_messages', f: f 
   = f.hidden_field :id
   = f.hidden_field :password
   .row
     .col-md-12
-      = render 'contacts/form_partials/general', f: f
+      = render 'depp/contacts/form_partials/general', f: f
   .row
     .col-md-12
-      = render 'contacts/form_partials/address', f: f
+      = render 'depp/contacts/form_partials/address', f: f
   - if !@contact.persisted? 
     .row
       .col-md-12
-        = render 'contacts/form_partials/code', f: f
+        = render 'depp/contacts/form_partials/code', f: f
   .row
     .col-md-12
-      = render 'contacts/form_partials/legal_document', f: f
+      = render 'depp/contacts/form_partials/legal_document', f: f
 
   .row
     .col-md-12.text-right

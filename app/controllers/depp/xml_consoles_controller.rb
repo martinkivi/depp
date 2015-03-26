@@ -12,8 +12,10 @@ module Depp
     end
 
     def load_xml
+      # binding.pry
       cl_trid = "#{current_user.tag}-#{Time.now.to_i}"
-      xml = File.read("public/epp_requests/#{params[:obj]}/#{params[:epp_action]}.xml")
+      xml_dir_path = Depp::Engine.root + 'app/views/depp/xml_consoles/epp_requests'
+      xml = File.read("#{xml_dir_path}/#{params[:obj]}/#{params[:epp_action]}.xml")
       xml.gsub!('<clTRID>ABC-12345</clTRID>', "<clTRID>#{cl_trid}</clTRID>")
       render text: xml
     end

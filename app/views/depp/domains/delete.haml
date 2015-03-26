@@ -1,4 +1,4 @@
-= render 'shared/title', name: "#{t(:delete)}: #{params[:domain_name]}"
+= render 'depp/shared/title', name: "#{t(:delete)}: #{params[:domain_name]}"
 
 = form_tag(destroy_domains_path, class: 'form-horizontal', multipart: true, method: :delete) do
   .panel.panel-default

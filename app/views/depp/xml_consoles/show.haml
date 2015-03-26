@@ -56,7 +56,7 @@
   .row
     .col-md-12
       = preserve do
-        = CodeRay.scan(@result.to_s.force_encoding("UTF-8"), :xml).div(:line_numbers => :table).html_safe
+        = CodeRay.scan(@result.to_s.force_encoding("UTF-8"), :xml).div().html_safe
 
 :javascript
   $('.js-load-xml').click(function() {
