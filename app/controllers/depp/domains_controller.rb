@@ -3,11 +3,11 @@ module Depp
     before_action :init_domain, except: :new
 
     def index
-      res = depp_current_user.repp_request('domains', { page: params[:page] })
+      res = depp_current_user.repp_request('domains', { details: true })
       flash.now[:epp_results] = [{ 'code' => res.code, 'msg' => res.message }]
       @response = res.parsed_body.with_indifferent_access if res.code == '200'
       @contacts    = @response ? @response[:contacts] : []
-      @total_pages = @response ? @response[:total_pages] : 0
+      @total_pages = 0
     end
 
     def info
