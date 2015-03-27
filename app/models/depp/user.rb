@@ -13,7 +13,7 @@ module Depp
     def initialize(args = {})
       args.each { |k, v| send(k.to_s + '=', v) }
     end
-    
+
     def server
       client_cert = File.read(ENV['cert_path'])
       client_key = File.read(ENV['key_path'])
@@ -53,13 +53,13 @@ module Depp
 
       ret = OpenStruct.new(code: res.code)
       ret.parsed_body = JSON.parse(res.body) if res.body.present?
-  
+
       if ret.parsed_body && ret.parsed_body['error']
         ret.message = ret.parsed_body['error']
       else
         ret.message = res.message
       end
-  
+
       ret
     end
 
