@@ -36,7 +36,6 @@
             %li= link_to t(:log_out, user: depp_current_user.tag), '/logout'
         / /.nav-collapse
 
-    = yield :tabs
     .container
       = render 'depp/shared/flash'
       = render 'depp/shared/epp_results'
