@@ -24,14 +24,14 @@
           <contact:pw>2fooBAR</contact:pw>
         </contact:authInfo>
       </contact:update>
-      <extension>
-        <eis:extdata xmlns:eis="urn:ee:eis:xml:epp:eis-1.0">
-          <eis:legalDocument type="pdf">
-            JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBvYmoKPDwvTGVuZ3RoIDMgMCBSL0Zp==
-          </eis:legalDocument>
-        </eis:extdata>
-      </extension>
     </update>
+    <extension>
+      <eis:extdata xmlns:eis="urn:ee:eis:xml:epp:eis-1.0">
+        <eis:legalDocument type="pdf">
+          JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBvYmoKPDwvTGVuZ3RoIDMgMCBSL0Zp==
+        </eis:legalDocument>
+      </eis:extdata>
+    </extension>
     <clTRID>ABC-12345</clTRID>
   </command>
 </epp>

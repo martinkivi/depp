@@ -18,17 +18,17 @@
         <contact:voice>+372.1234567</contact:voice>
         <contact:email>example@test.example</contact:email>
       </contact:create>
-      <extension>
-        <eis:extdata xmlns:eis="urn:ee:eis:xml:epp:eis-1.0">
-          <eis:ident type="bic" cc="EE">
-            123
-          </eis:ident>
-          <eis:legalDocument type="pdf">
-            JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBvYmoKPDwvTGVuZ3RoIDMgMCBSL0Zp==
-          </eis:legalDocument>
-        </eis:extdata>
-      </extension>
     </create>
+    <extension>
+      <eis:extdata xmlns:eis="urn:ee:eis:xml:epp:eis-1.0">
+        <eis:ident type="bic" cc="EE">
+          123
+        </eis:ident>
+        <eis:legalDocument type="pdf">
+          JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBvYmoKPDwvTGVuZ3RoIDMgMCBSL0Zp==
+        </eis:legalDocument>
+      </eis:extdata>
+    </extension>
     <clTRID>ABC-12345</clTRID>
   </command>
 </epp>
