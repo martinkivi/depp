@@ -16,7 +16,6 @@
           </contact:addr>
         </contact:postalInfo>
         <contact:voice>+372.1234567</contact:voice>
-        <contact:fax>123123</contact:fax>
         <contact:email>example@test.example</contact:email>
       </contact:create>
       <extension>
