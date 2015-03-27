@@ -111,13 +111,14 @@ module Depp
     class << self
       def default_params
         ret = {}
+
+        ret[:contacts_attributes] ||= {}
         ENV['default_admin_contacts_count'].to_i.times do |i|
-          ret[:contacts_attributes] ||= {}
           ret[:contacts_attributes][i] = { code: '', type: 'admin' }
         end
 
+        ret[:nameservers_attributes] ||= {}
         ENV['default_nameservers_count'].to_i.times do |i|
-          ret[:nameservers_attributes] ||= {}
           ret[:nameservers_attributes][i] = {}
         end
 
