@@ -60,7 +60,7 @@
 
 :javascript
   $('.js-load-xml').click(function() {
-    $.get('/xml_console/load_xml', {obj: $(this).data('obj'), epp_action: $(this).data('epp-action')}, function(data) {
+    $.get('xml_console/load_xml', {obj: $(this).data('obj'), epp_action: $(this).data('epp-action')}, function(data) {
       $('textarea[name="payload"]').html(data);
     });
   });
