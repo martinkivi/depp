@@ -37,15 +37,11 @@
                 \-
                 = Time.parse(x['valid_to']).try(:to_date)
               %td
-                = link_to(t(:edit), edit_domains_path(domain_name: x['name']), 
-                  class: 'btn btn-primary btn-xs') 
-                = link_to(t(:renew), renew_domains_path(domain_name: x['name']), 
-                  class: 'btn btn-default btn-xs') 
-                = link_to(t(:delete), delete_domains_path(domain_name: x['name']), 
+                = link_to(t(:edit), edit_domains_path(domain_name: x['name']),
+                  class: 'btn btn-primary btn-xs')
+                = link_to(t(:renew), renew_domains_path(domain_name: x['name']),
+                  class: 'btn btn-default btn-xs')
+                = link_to(t(:delete), delete_domains_path(domain_name: x['name']),
                   class: 'btn btn-default btn-xs')
 
-- 1.upto(@total_pages) do |i|
-  - if params[:page].nil? && i == 1 || params[:page].to_i == i
-    = i
-  - else
-    = link_to(i, domains_path(page: i))
+= paginate @paginatable_array

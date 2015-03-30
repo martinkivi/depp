@@ -2,6 +2,7 @@ module Depp
   # class ApplicationController < ::ApplicationController
   class ApplicationController < ActionController::Base
     include CurrentUserHelper
+    include ApplicationHelper
 
     # Prevent CSRF attacks by raising an exception.
     # For APIs, you may want to use :null_session instead.

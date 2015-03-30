@@ -43,5 +43,7 @@ Gem::Specification.new do |s|
   s.add_dependency "coderay", '>= 1.1.0'
   s.add_dependency "uuidtools", '>= 2.1.4'
 
+  s.add_dependency "kaminari", '~> 0.16.3'
+
   # s.add_development_dependency "sqlite3"
 end

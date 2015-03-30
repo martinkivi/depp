@@ -3,11 +3,15 @@ module Depp
     before_action :init_domain, except: :new
 
     def index
-      res = depp_current_user.repp_request('domains', { details: true })
+      limit, offset = pagination_details
+      res = depp_current_user.repp_request('domains', { details: true, limit: limit, offset: offset })
       flash.now[:epp_results] = [{ 'code' => res.code, 'msg' => res.message }]
       @response = res.parsed_body.with_indifferent_access if res.code == '200'
       @contacts    = @response ? @response[:contacts] : []
-      @total_pages = 0
+
+      @paginatable_array = Kaminari.paginate_array(
+        [], total_count: @response[:total_number_of_records]
+      ).page(params[:page]).per(limit)
     end
 
     def info
