@@ -4,6 +4,7 @@ module Depp
 
     def index
       limit, offset = pagination_details
+
       res = depp_current_user.repp_request('domains', { details: true, limit: limit, offset: offset })
       flash.now[:epp_results] = [{ 'code' => res.code, 'msg' => res.message }]
       @response = res.parsed_body.with_indifferent_access if res.code == '200'
