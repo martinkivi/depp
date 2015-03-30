@@ -11,7 +11,8 @@
         .col-md-12
           %p{class: "alert alert-danger"}
             = x.css('msg').text.split('[').first
-            = x.css('value').text
+            - if x.css('value').text.present?
+              = " - #{x.css('value').text}"
             %span.pull-right
               = "[code: #{x['code']}]"
 
@@ -22,6 +23,7 @@
         .col-md-12
           %p{class: "alert alert-danger"}
             = x['msg'].split('[').first
-            = x['value']
+            - if x['value'].present?
+              = " - #{x['value']}"
             %span.pull-right
               = "[code: #{x['code']}]"
