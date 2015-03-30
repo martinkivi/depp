@@ -22,8 +22,4 @@
                 = link_to(t(:edit), edit_contact_path(c[:code]), class: 'btn btn-primary btn-xs')
                 = link_to(t(:delete), delete_contact_path(c[:code]), class: 'btn btn-default btn-xs')
 
-- 1.upto(@total_pages) do |i|
-  - if params[:page].nil? && i == 1 || params[:page].to_i == i
-    = i
-  - else
-    = link_to(i, contacts_path(page: i))
+= paginate @paginatable_array
