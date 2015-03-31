@@ -4,7 +4,7 @@
   .panel-body
     .form-group
       .col-md-2.control-label
-        = f.label :street, t(:street)
+        = f.label :street, t(:street) + '*'
       .col-md-10
         = f.text_field :street, class: 'form-control'
 
@@ -16,7 +16,7 @@
 
     .form-group
       .col-md-2.control-label
-        = f.label :zip, t(:zip)
+        = f.label :zip, t(:zip) + '*'
       .col-md-10
         = f.text_field :zip, class: 'form-control'
 
@@ -28,6 +28,6 @@
 
     .form-group
       .col-md-2.control-label
-        = f.label :country_code, t(:country)
+        = f.label :country_code, t(:country) + '*'
       .col-md-10
         = f.select(:country_code, SortedCountry.all_options(f.object.country_code))
