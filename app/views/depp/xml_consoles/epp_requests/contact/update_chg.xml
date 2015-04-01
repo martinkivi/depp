@@ -16,7 +16,7 @@
               <contact:cc>EE</contact:cc>
             </contact:addr>
           </contact:postalInfo>
-          <contact:voice x="1234">+123.7035555555</contact:voice>
+          <contact:voice>+123.7035555555</contact:voice>
           <contact:email>jdoe@example.com</contact:email>
         </contact:chg>
         <contact:authInfo>
