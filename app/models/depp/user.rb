@@ -17,12 +17,13 @@ module Depp
     def server
       client_cert = File.read(ENV['cert_path'])
       client_key = File.read(ENV['key_path'])
+      port = Rails.env.test? ? 701 : ENV['epp_port']
 
       @server_cache ||= Epp::Server.new({
         server: ENV['epp_hostname'],
         tag: tag,
         password: password,
-        port: ENV['epp_port'],
+        port: port,
         cert: OpenSSL::X509::Certificate.new(client_cert),
         key: OpenSSL::PKey::RSA.new(client_key)
       })
