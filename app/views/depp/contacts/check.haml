@@ -1,4 +1,4 @@
-= render 'depp/shared/title', name: t(:contact_info)
+= render 'depp/shared/title', name: t(:check_contact)
 
 %hr
 .row
@@ -24,8 +24,8 @@
         %table.table.table-hover.table-bordered.table-condensed
           %thead
             %tr
-              %th= t('id')
-              %th= t('value')
+              %th= t(:contact_code)
+              %th= t(:result)
           %tbody
             - @contacts.each do |contact|
               %tr

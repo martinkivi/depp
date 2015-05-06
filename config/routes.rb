@@ -19,6 +19,7 @@ Depp::Engine.routes.draw do
 
     collection do
       get 'check'
+      get 'info'
     end
   end
 

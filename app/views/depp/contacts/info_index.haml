@@ -1,10 +1,15 @@
-= render 'depp/shared/title', name: t(:contacts_info)
+- title = t(:contact_info)
+- title = t(:delete_contact) if params[:com] == 'delete'
+- title = t(:update_contact) if params[:com] == 'update'
+
+= render 'depp/shared/title', name: title
 
 .row
   .col-md-12
-    = form_tag contact_path, class: 'form-horizontal', method: :get do
+    = form_tag info_contacts_path, class: 'form-horizontal', method: :get do
+      = hidden_field_tag :com, params[:com]
       .form-group
-        = label_tag :contact_id, t('contact_id'), class: 'col-md-2 control-label'
+        = label_tag :contact_id, t(:contact_code), class: 'col-md-2 control-label'
         .col-md-10
           = text_field_tag :contact_id, params[:contact_id], class: 'form-control', autocomplete: 'off'
       .form-group

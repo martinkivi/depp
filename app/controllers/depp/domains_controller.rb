@@ -16,12 +16,11 @@ module Depp
     end
 
     def info
-      @data = @domain.info(params[:domain_name]) if params[:domain_name]
-      if response_ok?
-        render 'info'
+      if params[:domain_name]
+        @data = @domain.info(params[:domain_name])
+        render 'info_index' and return unless response_ok?
       else
-        flash[:alert] = t('domain_not_found')
-        redirect_to domains_path and return
+        render 'info_index'
       end
     end
 

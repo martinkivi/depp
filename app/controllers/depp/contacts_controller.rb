@@ -61,17 +61,32 @@ module Depp
       end
     end
 
+    def info
+      if params[:contact_id]
+        case params[:com]
+        when 'delete'
+          redirect_to delete_contact_path(params[:contact_id])
+        when 'update'
+          redirect_to edit_contact_path(params[:contact_id])
+        else
+          redirect_to contact_path(params[:contact_id])
+        end
+      else
+        render 'info_index'
+      end
+    end
+
     def check
       @ids = params[:contacts]
-      #    if @ids
-      #      @contacts = []
-      #      @ids.split(',').each do |id|
-      #        @contacts << id.strip
-      #      end
-      #    end
-      return unless @ids
+      # if @ids
+        # @contacts = []
+        # @ids.split(',').each do |id|
+          # @contacts << id.strip
+        # end
+      # end
+      # return unless @ids
 
-      @data = @contact.check(@ids)
+      @data = Depp::Contact.check(@ids)
       @contacts = Depp::Contact.construct_check_hash_from_data(@data)
     end
 

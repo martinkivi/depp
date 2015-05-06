@@ -138,6 +138,11 @@ module Depp
         end
         hash
       end
+
+      def check(id)
+        xml = Depp::Contact.epp_xml.check(id: { value: id })
+        Depp::Contact.user.request(xml)
+      end
     end
 
     def initialize(attributes={})
@@ -251,6 +256,7 @@ module Depp
       }
     end
 
+    # depricated, use class method
     def check(id)
       xml = epp_xml.check(id: { value: id })
       current_user.request(xml)

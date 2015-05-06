@@ -1,7 +1,5 @@
-.row
-  .col-sm-12
-    %h2.text-center-xs= t('keyrelay')
-%hr
+= render 'depp/shared/title', name: t(:keyrelay)
+
 .row
   .col-md-12
     = form_tag keyrelay_path, class: 'form-horizontal', method: :post, multipart: true do
