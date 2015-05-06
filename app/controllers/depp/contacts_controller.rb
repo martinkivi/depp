@@ -77,17 +77,20 @@ module Depp
     end
 
     def check
-      @ids = params[:contacts]
-      # if @ids
-        # @contacts = []
-        # @ids.split(',').each do |id|
-          # @contacts << id.strip
+      if params[:contacts].present?
+        @ids = params[:contacts]
+        # if @ids
+          # @contacts = []
+          # @ids.split(',').each do |id|
+            # @contacts << id.strip
+          # end
         # end
-      # end
-      # return unless @ids
+        return unless @ids
 
-      @data = Depp::Contact.check(@ids)
-      @contacts = Depp::Contact.construct_check_hash_from_data(@data)
+        @data = Depp::Contact.check(@ids)
+        @contacts = Depp::Contact.construct_check_hash_from_data(@data)
+      else
+      end
     end
 
     private

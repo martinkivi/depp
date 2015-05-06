@@ -125,3 +125,4 @@ en:
   no_connection_to_registry: Connection issue to the registry server! Please try again later.
   domain_not_found: 'Domain was not found'
   new_contact: 'New contact'
+  delete_contact: 'Delete contact'
