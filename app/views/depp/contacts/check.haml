@@ -1,20 +1,18 @@
 = render 'depp/shared/title', name: t(:check_contact)
 
-%hr
 .row
   .col-md-12
     = form_tag check_contacts_path, class: 'form-horizontal', method: :get do
-      .col-md-11
-        .form-group
-          = text_field_tag :contacts, params[:contacts], class: 'form-control', autocomplete: 'off'
-
-      .col-md-1.text-right.text-center-xs
-        .form-group
-          .col-md-offset-2.col-md-10
-            %button.btn.btn-primary
-              &nbsp;
-              %span.glyphicon.glyphicon-search
-              &nbsp;
+      .form-group
+        .col-md-3.control-label
+          = label_tag :contact_id, t(:contact_code)
+        .col-md-5
+          = text_field_tag :contacts, params[:contacts], class: 'form-control'
+        .col-md-2
+          %button.btn.btn-primary
+            &nbsp;
+            %span.glyphicon.glyphicon-search
+            &nbsp;
 
 - if @contacts
   %hr

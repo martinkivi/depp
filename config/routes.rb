@@ -15,6 +15,8 @@ Depp::Engine.routes.draw do
   resources :contacts do
     member do
       get 'delete'
+      post 'fullshow' # a bit more secure than get for password field
+      post 'fulledit' # a bit more secure than get for password field
     end
 
     collection do

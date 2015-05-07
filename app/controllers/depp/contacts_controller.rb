@@ -23,8 +23,22 @@ module Depp
       @contact = Depp::Contact.find_by_id(params[:id])
     end
 
+    def fullshow
+      @contact = Depp::Contact.find_by_id(params[:id], params[:password])
+      render 'show'
+    end
+
     def edit
       @contact = Depp::Contact.find_by_id(params[:id])
+    end
+
+    def fulledit
+      @contact = Depp::Contact.find_by_id(params[:id], params[:password])
+      if @contact.persisted? && @contact.complete_info?
+        render 'edit'
+      else
+        redirect_to :back, notice: I18n.t(:wrong_password)
+      end
     end
 
     def create
@@ -63,13 +77,10 @@ module Depp
 
     def info
       if params[:contact_id]
-        case params[:com]
-        when 'delete'
-          redirect_to delete_contact_path(params[:contact_id])
-        when 'update'
-          redirect_to edit_contact_path(params[:contact_id])
+        if params[:com] == 'delete'
+          redirect_to delete_contact_path(params[:contact_id], com: params[:com])
         else
-          redirect_to contact_path(params[:contact_id])
+          redirect_to contact_path(params[:contact_id], com: params[:com])
         end
       else
         render 'info_index'

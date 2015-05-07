@@ -40,8 +40,8 @@ module Depp
         )
       end
 
-      def find_by_id(id)
-        data = info_xml(id)
+      def find_by_id(id, password = nil)
+        data = info_xml(id, password)
 
         res = data.css('epp response resData infData')
         ext = data.css('epp response extension')
@@ -278,6 +278,11 @@ module Depp
     def persisted? 
       id.present?
     end
+
+    def complete_info?
+      email.present?
+    end
+
 
     def handle_errors(data)
       data.css('result').each do |x|

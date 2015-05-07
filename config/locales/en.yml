@@ -129,3 +129,4 @@ en:
   update_contact: 'Update contact'
   delete_domain: 'Delete domain'
   update_domain: 'Update domain'
+  wrong_password: 'Wrong password or some other issue'

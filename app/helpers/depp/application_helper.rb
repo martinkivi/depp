@@ -11,6 +11,8 @@ module Depp
     end
 
     def ident_for(contact)
+      return '' if contact.ident.blank?
+
       case contact.ident_type
       when 'birthday'
         "#{contact.ident} [#{contact.ident_type}]"
