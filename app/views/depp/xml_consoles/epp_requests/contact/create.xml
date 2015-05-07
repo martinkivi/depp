@@ -10,7 +10,7 @@
             <contact:street>Suite 100</contact:street>
             <contact:street/>
             <contact:city>Megaton</contact:city>
-            <contact:sp>F3 </contact:sp>
+            <contact:sp>F3</contact:sp>
             <contact:pc>201-33</contact:pc>
             <contact:cc>EE</contact:cc>
           </contact:addr>
@@ -21,9 +21,7 @@
     </create>
     <extension>
       <eis:extdata xmlns:eis="urn:ee:eis:xml:epp:eis-1.0">
-        <eis:ident type="bic" cc="EE">
-          123
-        </eis:ident>
+        <eis:ident type="bic" cc="EE">123</eis:ident>
         <eis:legalDocument type="pdf">
           JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBvYmoKPDwvTGVuZ3RoIDMgMCBSL0Zp==
         </eis:legalDocument>
