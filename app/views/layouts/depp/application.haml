@@ -35,7 +35,11 @@
                 %li
                   = link_to t(:check), check_domains_path
                 %li
-                  = link_to t(:new), new_domain_path
+                  = link_to t(:create), new_domain_path
+                %li
+                  = link_to t(:update), info_domains_path(com: 'update')
+                %li
+                  = link_to t(:delete), info_domains_path(com: 'delete')
                 %li
                   = link_to t(:renew), renew_domains_path
                 %li
@@ -54,6 +58,8 @@
                   = link_to t(:info), info_contacts_path
                 %li
                   = link_to t(:check), check_contacts_path
+                %li
+                  = link_to t(:create), new_contact_path
                 %li
                   = link_to t(:update), info_contacts_path(com: 'update')
                 %li

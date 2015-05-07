@@ -17,8 +17,15 @@ module Depp
 
     def info
       if params[:domain_name]
-        @data = @domain.info(params[:domain_name])
-        render 'info_index' and return unless response_ok?
+        case params[:com]
+        when 'delete'
+          redirect_to delete_domains_path(domain_name: params[:domain_name])
+        when 'update'
+          redirect_to edit_domains_path(domain_name: params[:domain_name])
+        else
+          @data = @domain.info(params[:domain_name])
+          render 'info_index' and return unless response_ok?
+        end
       else
         render 'info_index'
       end

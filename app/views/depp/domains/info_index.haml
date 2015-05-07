@@ -1,8 +1,12 @@
-= render 'depp/shared/title', name: t(:domain_info)
+- title = t(:domain_info)
+- title = t(:delete_domain) if params[:com] == 'delete'
+- title = t(:update_domain) if params[:com] == 'update'
+= render 'depp/shared/title', name: title
 
 .row
   .col-md-12
     = form_tag info_domains_path, class: 'form-horizontal', method: :get do
+      = hidden_field_tag :com, params[:com]
       .col-md-11
         .form-group
           = text_field_tag :domain_name, params[:domain_name], class: 'form-control', placeholder: t('domain_name'), autocomplete: 'off', autofocus: true

@@ -126,3 +126,6 @@ en:
   domain_not_found: 'Domain was not found'
   new_contact: 'New contact'
   delete_contact: 'Delete contact'
+  update_contact: 'Update contact'
+  delete_contact: 'Delete domain'
+  update_domain: 'Update domain'
