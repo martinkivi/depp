@@ -12,10 +12,11 @@
         = label_tag :contact_id, t(:contact_code), class: 'col-md-2 control-label'
         .col-md-10
           = text_field_tag :contact_id, params[:contact_id], class: 'form-control', autocomplete: 'off'
-      .form-group
-        = label_tag :password, t('password'), class: 'col-md-2 control-label'
-        .col-md-10
-          = text_field_tag :password, params[:password], class: 'form-control', autocomplete: 'off'
+      - if params[:com].blank?
+        .form-group
+          = label_tag :password, t(:password), class: 'col-md-2 control-label'
+          .col-md-10
+            = text_field_tag :password, params[:password], class: 'form-control', autocomplete: 'off'
       .form-group
         .col-md-offset-2.col-md-10
           %button.btn.btn-primary

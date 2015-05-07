@@ -127,5 +127,5 @@ en:
   new_contact: 'New contact'
   delete_contact: 'Delete contact'
   update_contact: 'Update contact'
-  delete_contact: 'Delete domain'
+  delete_domain: 'Delete domain'
   update_domain: 'Update domain'
