@@ -10,14 +10,12 @@
           %tr
             %th{class: 'col-xs-3'}= t(:name)
             %th{class: 'col-xs-3'}= t(:code)
-            %th{class: 'col-xs-3'}= t(:ident)
             %th{class: 'col-xs-3'}= t(:actions)
         %tbody
           - @contacts.each do |c|
             %tr
               %td= link_to(c[:name], contact_path(id: c[:code]))
               %td= c[:code]
-              %td= c[:ident]
               %td
                 = link_to(t(:edit), edit_contact_path(c[:code]), class: 'btn btn-primary btn-xs')
                 = link_to(t(:delete), delete_contact_path(c[:code]), class: 'btn btn-default btn-xs')
