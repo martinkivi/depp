@@ -45,7 +45,7 @@ module Depp
 
     def response_ok?
       @data.css('result').each do |x|
-        success_codes = %(1000, 1300, 1301)
+        success_codes = %(1000, 1001, 1300, 1301)
         return false unless success_codes.include?(x['code'])
       end
       true
