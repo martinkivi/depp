@@ -1,7 +1,16 @@
 Depp
 ====
 
-EPP/REPP Rails engine
+EPP/REPP Rails engine, what provides EPP/REPP client functionality for EPP-web-client
+under the hood.
+
+Depp initial idea was to provide library for Registrars in order to help them
+to implement EPP/REPP clients.
+
+Depp initial idea is currently OFFICIALLY NOT SUPPORTED and there is no
+date or promise to support it at the moment. However if desired, you are welcome to fork it.
+
+Currently only EPP-web-client is using it.
 
 Installation
 ------------
