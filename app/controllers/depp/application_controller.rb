@@ -11,7 +11,7 @@ module Depp
     helper_method :depp_current_user
 
     rescue_from(Errno::ECONNRESET, Errno::ECONNREFUSED) do |exception|
-      redirect_to login_url, alert: t(:no_connection_to_registry)
+      redirect_to main_app.login_url, alert: t(:no_connection_to_registry)
     end
 
     before_action :authenticate_user
