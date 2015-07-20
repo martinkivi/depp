@@ -283,7 +283,6 @@ module Depp
       email.present?
     end
 
-
     def handle_errors(data)
       data.css('result').each do |x|
         success_codes = %(1000, 1300, 1301)

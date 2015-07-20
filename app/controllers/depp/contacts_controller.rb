@@ -21,6 +21,9 @@ module Depp
 
     def show
       @contact = Depp::Contact.find_by_id(params[:id])
+      if params[:com] == 'update' && @contact.complete_info?
+        return redirect_to edit_contact_path(params[:id])
+      end
     end
 
     def fullshow
