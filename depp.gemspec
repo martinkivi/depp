@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
 
   # epp api
   # s.add_dependency "epp", "~> 1.4.2", github: 'gitlabeu/epp'
-  s.add_dependency "epp-xml", '>= 1.0.3'
+  s.add_dependency "epp-xml", '>= 1.0.4'
   s.add_dependency "nokogiri", '>= 1.6.6.2'
 
   # registry related
