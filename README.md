@@ -17,8 +17,8 @@ Installation
 
 Add Depp and epp to your Gemfile:
 
-    gem 'depp', github: 'domify/depp'
-    gem 'epp', '~> 1.4.2', github: 'gitlabeu/epp'
+    gem 'depp', github: 'internetee/depp'
+    gem 'epp', '~> 1.4.2', github: 'internetee/epp'
 
 Mount Depp to your application routes, example:
 
