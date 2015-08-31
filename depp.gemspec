@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Depp::VERSION
   s.authors     = ["Priit Tark", "Martin Lensment"]
   s.email       = ["priit@gitlab.eu", "martin@gitlab.eu"]
-  s.homepage    = "https://github.com/domify/depp"
+  s.homepage    = "https://github.com/internetee/depp"
   s.summary     = "EPP/REPP client build as Rails engine."
   s.description = "EPP/REPP client build as Rails engine."
   s.license     = "MIT"
@@ -34,7 +34,6 @@ Gem::Specification.new do |s|
   s.add_dependency "jquery-rails", ">= 4.0.3" # jquery
 
   # epp api
-  # s.add_dependency "epp", "~> 1.4.2", github: 'gitlabeu/epp'
   s.add_dependency "epp-xml", '>= 1.0.4'
   s.add_dependency "nokogiri", '>= 1.6.6.2'
 
